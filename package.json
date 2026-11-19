@@ -1,0 +1,27 @@
+{
+  "name": "pricing-bulucu",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 43123",
+    "dev:mock": "wrangler dev --port 43123 --var MOCK_AI:true",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types",
+    "typecheck": "tsc --noEmit",
+    "bundle": "node scripts/build-worker.mjs",
+    "test": "tsx --test --test-concurrency=4 test/*.test.ts",
+    "test:unit": "tsx --test --test-concurrency=4 test/safety.test.ts test/html.test.ts test/plans.test.ts"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261110.1",
+    "esbuild": "^0.28.2",
+    "puppeteer-core": "^25.17.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.50.0"
+  },
+  "dependencies": {
+    "@cloudflare/puppeteer": "^2.0.0"
+  }
+}
